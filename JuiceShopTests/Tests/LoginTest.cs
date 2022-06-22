@@ -26,8 +26,6 @@ namespace Framework.Tests
             PagesContext.LoginPage.EnterEmail("jeanninesworld@hotmail.com");
             PagesContext.LoginPage.EnterPassword("Password");
             PagesContext.LoginPage.ClickLogin();
-            PagesContext.LoginPage.ClickYourBasket();
-            PagesContext.LoginPage.GetViewLabel().Should().Be("Your Basket");
         }
     }
 }

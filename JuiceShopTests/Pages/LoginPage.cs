@@ -19,6 +19,8 @@ namespace Framework.Pages
         By loginBtn = By.Id("loginButton");
         By yourBasketBtn = By.XPath("//*[@aria-label='Show the shopping cart']"); 
         By viewLabel = By.XPath("//h1");
+        By invalidEmail = By.XPath("//app-login/div/mat-card/div[1]");
+        By notACustomer = By.XPath("//div[2]/div[2]/a");
 
 
 
@@ -45,6 +47,13 @@ namespace Framework.Pages
         public LoginPage ClickLogin()
         {
             WaitHelper.WaitForElementPresent(Driver, loginBtn, TimeSpan.FromSeconds(30)).Click();
+            if (FindVisibleElement(invalidEmail, TimeSpan.FromSeconds(8)).Displayed == true)
+                WaitHelper.WaitForElementPresent(Driver, notACustomer, TimeSpan.FromSeconds(30)).Click();
+            
+
+            else
+            return this;
+            
             return this;
         }
         public LoginPage ClickYourBasket()
