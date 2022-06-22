@@ -95,10 +95,10 @@ namespace Framework.Helpers
             }
             return element;
         }
-
-
-
-
+        
+        
+        
+        
         //create a method to determine if element is present
         public static Boolean IsElementPresent(IWebDriver driver, By locator, TimeSpan timeout)
         {
@@ -163,6 +163,7 @@ namespace Framework.Helpers
             return isVisible;
 
         }
+
 
         public static Boolean IsElementNotVisible(IWebDriver driver, By locator, TimeSpan timeout)
 
