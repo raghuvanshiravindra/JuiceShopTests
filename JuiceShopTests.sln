@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "JuiceShopTests\Framework.csproj", "{7C69F9C3-0976-470A-8DB6-E9C866887F8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "JuiceShopTests\Framework.csproj", "{7C69F9C3-0976-470A-8DB6-E9C866887F8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuiceShopAPIDemo", "JuiceShopAPIDemo\JuiceShopAPIDemo.csproj", "{BCC3D86D-9849-4974-8569-5AF9DC89969F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuiceShopAPITests", "APITests\JuiceShopAPITests.csproj", "{F0575FDD-C96C-486F-B309-36B339560674}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7C69F9C3-0976-470A-8DB6-E9C866887F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C69F9C3-0976-470A-8DB6-E9C866887F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C69F9C3-0976-470A-8DB6-E9C866887F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC3D86D-9849-4974-8569-5AF9DC89969F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC3D86D-9849-4974-8569-5AF9DC89969F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC3D86D-9849-4974-8569-5AF9DC89969F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC3D86D-9849-4974-8569-5AF9DC89969F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0575FDD-C96C-486F-B309-36B339560674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0575FDD-C96C-486F-B309-36B339560674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0575FDD-C96C-486F-B309-36B339560674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0575FDD-C96C-486F-B309-36B339560674}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

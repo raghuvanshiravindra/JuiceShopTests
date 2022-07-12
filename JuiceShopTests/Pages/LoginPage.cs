@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Framework.Pages
@@ -19,8 +20,9 @@ namespace Framework.Pages
         By loginBtn = By.Id("loginButton");
         By yourBasketBtn = By.XPath("//*[@aria-label='Show the shopping cart']"); 
         By viewLabel = By.XPath("//h1");
-        By invalidEmail = By.XPath("//app-login/div/mat-card/div[1]");
+        By invalidEmail = By.XPath("//*[@class='error ng-star-inserted']");
         By notACustomer = By.Id("newCustomerLink");
+        By regEmail = By.Id("emailControl");
 
 
 
@@ -32,7 +34,7 @@ namespace Framework.Pages
         public LoginPage ClickAccountLogin()
         {
             WaitHelper.WaitForElementPresent(Driver, acctLoginBtn, TimeSpan.FromSeconds(30)).Click();
-            return this;
+                        return this;
         }
         public LoginPage EnterEmail(String text)
         {
@@ -46,11 +48,10 @@ namespace Framework.Pages
         }
         public LoginPage ClickLogin()
         {
+            Thread.Sleep(6000);
             WaitHelper.WaitForElementPresent(Driver, loginBtn, TimeSpan.FromSeconds(30)).Click();
-            if (FindVisibleElement(invalidEmail, TimeSpan.FromSeconds(8)).Displayed == true)
-
-                WaitHelper.WaitForElementVisible(Driver, notACustomer, TimeSpan.FromSeconds(30)).Click();
-            
+            if (WaitHelper.WaitForElementPresent(Driver, invalidEmail, TimeSpan.FromSeconds(8)).Displayed == true)                     
+            WaitHelper.WaitForElementPresent(Driver, notACustomer, TimeSpan.FromSeconds(30)).Click();
 
             else
             return this;

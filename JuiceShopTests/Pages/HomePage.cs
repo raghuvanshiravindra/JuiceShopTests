@@ -12,19 +12,19 @@ namespace Framework.Pages
     {
 
         public HomePage(IWebDriver driver) : base(driver) { }
-        By dismiss = By.XPath("/html//div[2]/button[2]/span[1]/span");
-        By itemOne = By.XPath("//mat-grid-tile[1]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemTwo = By.XPath("//mat-grid-tile[2]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemThree = By.XPath("//mat-grid-tile[3]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemFour = By.XPath("//mat-grid-tile[4]/div/mat-card/div[2]/div[2]/div[1]");
-        By itemFive = By.XPath("//mat-grid-tile[5]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemSix = By.XPath("//mat-grid-tile[6]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemSeven = By.XPath("//mat-grid-tile[7]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemEight = By.XPath("//mat-grid-tile[8]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemNine = By.XPath("//mat-grid-tile[9]/div/mat-card/div[2]/div[2]/div[1]");
-        By itemTen = By.XPath("//mat-grid-tile[10]/div/mat-card/div[1]/div[2]/div[1]");
-        By itemEleven = By.XPath("//mat-grid-tile[11]/div/mat-card/div[2]/div[2]/div[1]");
-        By itemTwelve = By.XPath("//mat-grid-tile[12]/div/mat-card/div[2]/div[2]/div[1]");
+        By dismiss = By.XPath("//span[text()='Dismiss']");
+        By itemOne = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Apple Juice (1000ml) ']");
+        By itemTwo = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Apple Pomace ']");
+        By itemThree = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Banana Juice (1000ml) ']");
+        By itemFour = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Best Juice Shop Salesman Artwork ']");
+        By itemFive = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Carrot Juice (1000ml) ']");
+        By itemSix = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Eggfruit Juice (500ml) ']");
+        By itemSeven = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Fruit Press ']");
+        By itemEight = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Green Smoothie ']");
+        By itemNine = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Juice Shop \"Permafrost\" 2020 Edition ']");
+        By itemTen = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Lemon Juice (500ml) ']");
+        By itemEleven = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' Melon Bike (Comeback-Product 2018 Edition) ']");
+        By itemTwelve = By.XPath("//*[@class='mat-grid-tile-content']//*[text()=' OWASP Juice Shop \"King of the Hill\" Facemask ']");
 
 
         
