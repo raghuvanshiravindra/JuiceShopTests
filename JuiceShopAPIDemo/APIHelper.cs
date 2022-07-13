@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace JuiceShopAPIDemo
 {
@@ -22,11 +23,36 @@ namespace JuiceShopAPIDemo
             return restClient;
         }
 
+        
+
+        public class AccessToken
+        {
+            public void GetNewAccessToken()
+            {
+                Tokens localTokens = new Tokens();
+
+                var client = new RestClient("https://juice-shop.herokuapp.com/api/token");
+                var request = new RestRequest("Feedbacks/", Method.Post);
+                request.AddHeader("content-type", "application/x-www-form-urlencoded");
+                request.AddParameter("application/x-www-form-urlencoded", "grant_type=refresh_token&refresh_token=" + localTokens.refresh_token, ParameterType.RequestBody);
+                RestResponse response = client.Execute(request);
+                var data = response.Content;
+                var responseContent = response.Content;
+
+                var newTokensList = new JavaScriptSerializer().Deserialize<Tokens>(responseContent);
+
+                localTokens.access_token = newTokensList.access_token;
+                localTokens.refresh_token = newTokensList.refresh_token;
+            }
+        }
+
         public RestRequest CreatePostRequest(string payload)
         {
+
+            Tokens tokens = new Tokens(); 
             var restRequest = new RestRequest("Feedbacks/", Method.Post);
             restRequest.AddHeader("Accept", "application/json, text/plain, */*");
-            restRequest.AddHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6NDYxLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiamVhbm5pbmVzd29ybGRAaG90bWFpbC5jb20iLCJwYXNzd29yZCI6IjYzNjFmYzEwOGVhNGUxYTk1YWQwMjhkMWMwYTdlMzAwIiwicm9sZSI6ImN1c3RvbWVyIiwiZGVsdXhlVG9rZW4iOiIiLCJsYXN0TG9naW5JcCI6IjAuMC4wLjAiLCJwcm9maWxlSW1hZ2UiOiIvYXNzZXRzL3B1YmxpYy9pbWFnZXMvdXBsb2Fkcy9kZWZhdWx0LnN2ZyIsInRvdHBTZWNyZXQiOiIiLCJpc0FjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wNy0xMiAxMDoxMjozNy4xNjUgKzAwOjAwIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0xMiAxMDoxMjozNy4xNjUgKzAwOjAwIiwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNjU3NjIwNzkzLCJleHAiOjE2NTc2Mzg3OTN9.hdV0ppixWtfXHZZsTcUQ_TlQRuJbT97fH9kUgZUsPMFHrl0G9jK8jPJBt9pGuyX976OV9HwKrScHy5aNkiexSfpAVrK7eqoLWD06keV9BNlgepugfELLFL_IqnFe0dSUNaQGdb2BNlvE77tINVq_IsNb23usosTFkT8lfZb3QLA"); restRequest.AddParameter("application/json", payload, ParameterType.RequestBody);
+            restRequest.AddHeader("Authorization", "Bearer " + tokens.access_token);            
             return restRequest;
         }
         

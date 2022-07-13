@@ -19,8 +19,9 @@ namespace JuiceShopAPIDemo
 
             RestResponse response = restClient.Execute(restRequest);
             var content = response.Content;
-
+            //  ToDo 3: First ToDo comment
             var juices = JsonConvert.DeserializeObject<ListOfJuicesDTO>(content);
+            //  ToDo 4: Second ToDo
             return juices;
         }
     }
